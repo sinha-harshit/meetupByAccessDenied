@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Noto+Sans+JP&family=Roboto:wght@300&display=swap');
+
+body {
+  background: #f1f1f1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* The laptop with borders */
+.laptop {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: absolute;
+  width: 1366px;
+  height: 800px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: black;
+  border-width: 24px 24px 80px;
+  background-color: #89a4ee;
+
+}
+
+/* The keyboard of the laptop */
+.laptop:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: #89a4ee;
+  border-radius: 6px;
+}
+
+/* The top of the keyboard */
+.laptop:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: #f1f1f1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.laptop .content {
+  width: 1366px;
+  height: 800px;
+  overflow: hidden;
+  border: none;
+  color:white;
+  font-size: 40px;
+    text-align: center;
+}
+#type {
+  width:200px;
+  height:50px;
+  font-size:20px;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#form-button1{
+    border-radius: 4px;
+    background-color: green;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 100px;
+}
+
+#matching-form{
+    align-self: center;
+}
+<link rel="stylesheet" href="css/styles.css">
+
+</style>
+</head>
+<body style="background:#fff">
+<div class="laptop">
+  <div class="content">
+    <form id="matching-form" action= "/results" method="POST">
+    <p>What are you looking for ?</p>
+    <select name="type" selected="type" id="type">
+        <option value="Co-Worker" id="type">Co-Worker</option>
+        <option value="Student Group" id="type">Student Group</option>
+        <option value="Casual Hangout" id="type">Casual hangout</option>
+    </select>
+    <p>City:</p>
+    <select name="city" selected="type" id="type">
+        <option value="Melbourne" id="type">Melbourne</option>
+        <option value="Sydney" id="type">Sydney</option>
+        <option value="Adelaide" id="type">Adelaide</option>
+    </select>
+</form>
+<button type="submit" id="form-button1" form="matching-form" value="Search">Search</button>
+  </div>
+</div>
+
+</body>
+</html>
